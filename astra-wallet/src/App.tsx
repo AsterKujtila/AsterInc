@@ -1,34 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { RainbowKitProvider, ConnectButton, getDefaultConfig, darkTheme } from '@rainbow-me/rainbowkit'
+import '@rainbow-me/rainbowkit/styles.css'
+import { WagmiProvider, http } from 'wagmi'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { sepolia } from 'wagmi/chains'
+import AccountOverview from './components/AccountOverview'
+import AISecurityScanner from './components/AISecurityScanner'
+
+const config = getDefaultConfig({
+  appName: 'ASTRA Wallet',
+  projectId: 'ASTRA-DEMO',
+  chains: [sepolia],
+  ssr: false,
+  transports: {
+    [sepolia.id]: http(),
+  },
+})
+
+const queryClient = new QueryClient()
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <RainbowKitProvider theme={darkTheme({ accentColor: '#8b5cf6' })}>
+          <div className="min-h-screen bg-slate-900 text-slate-100">
+            <div className="max-w-3xl mx-auto px-4 py-10 space-y-8">
+              <header className="flex items-center justify-between">
+                <h1 className="text-2xl font-semibold tracking-tight">ASTRA Wallet</h1>
+                <ConnectButton />
+              </header>
+
+              <main className="space-y-8">
+                <AccountOverview />
+                <AISecurityScanner />
+              </main>
+            </div>
+          </div>
+        </RainbowKitProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   )
 }
 
