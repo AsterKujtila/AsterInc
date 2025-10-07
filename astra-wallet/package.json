@@ -1,7 +1,7 @@
 {
-  "name": "astra-wallet",
+  "name": "asterlaunch",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,16 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^6.28.0",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/wallet-adapter-wallets": "^0.19.32",
+    "@solana/web3.js": "^1.95.4",
+    "recharts": "^2.12.7",
+    "lucide-react": "^0.468.0",
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
