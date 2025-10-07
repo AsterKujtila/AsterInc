@@ -1,0 +1,12 @@
+[package]
+name = "aster-launch"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+solana-program = "1.18"
+spl-token = "4.0"
+spl-associated-token-account = "2.3"
+borsh = "0.10"
+borsh-derive = "0.10"
+thiserror = "1.0"
