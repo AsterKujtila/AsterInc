@@ -1,0 +1,27 @@
+[package]
+name = "asterlaunch-program"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+solana-program = "1.18.0"
+spl-token = "4.0.0"
+borsh = "0.10.3"
+thiserror = "1.0"
+
+[dev-dependencies]
+solana-program-test = "1.18.0"
+solana-sdk = "1.18.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[features]
+no-entrypoint = []
+test-bpf = []
