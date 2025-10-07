@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: asterlaunch-api
+    env: python
+    plan: free
+    autoDeploy: true
+    buildCommand: pip install -r app/requirements.txt
+    startCommand: cd app && python manage.py migrate && python manage.py createsuperauto && gunicorn defang_sample.wsgi:application --bind 0.0.0.0:8000
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+  - type: static
+    name: asterlaunch-ui
+    env: static
+    plan: free
+    autoDeploy: true
+    buildCommand: cd astra-wallet && npm ci && npm run build
+    staticPublishPath: astra-wallet/dist
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
