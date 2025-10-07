@@ -1,0 +1,29 @@
+{
+  "name": "asterlaunch-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.2.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.10",
+    "postcss": "^8.4.41",
+    "autoprefixer": "^10.4.20",
+    "@solana/web3.js": "^1.95.3",
+    "@solana/wallet-adapter-react": "^0.19.24",
+    "@solana/wallet-adapter-wallets": "^0.19.22",
+    "@solana/wallet-adapter-react-ui": "^0.9.33",
+    "lightweight-charts": "^4.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.7"
+  }
+}
