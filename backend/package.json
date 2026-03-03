@@ -1,0 +1,1 @@
+{\n  \"name\": \"backend\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Backend for the AI Video Clipper project\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"start\": \"node index.js\"\n  },\n  \"dependencies\": {\n    \"express\": \"^4.17.1\",\n    \"cors\": \"^2.8.5\",\n    \"pg\": \"^8.7.3\",\n    \"multer\": \"^1.4.2\",\n    \"typescript\": \"^4.5.4\"\n  }\n}
