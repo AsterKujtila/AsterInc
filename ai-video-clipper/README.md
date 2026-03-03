@@ -1,32 +1,164 @@
-# AI Video Clipper Pro
+# 🎬 AI Video Clipper Pro
 
-## Overview
-AI Video Clipper Pro is a cutting-edge tool designed for video editing enthusiasts and professionals alike. It harnesses the power of artificial intelligence to simplify video clipping, allowing users to create stunning clips from lengthy videos in a matter of seconds.
+A professional AI-powered video clipping application built with React, Node.js, PostgreSQL, and integrated with Whop for seamless monetization.
 
-## Features
-- **AI-Powered Clipping**: Automatically identify and extract highlights from videos.
-- **User-Friendly Interface**: Intuitive design makes it easy for anyone to edit videos.
-- **Customizable Settings**: Adapt the clipping parameters to fit your style.
-- **Multiple Format Support**: Export clips in various formats, including MP4, AVI, and MOV.
+## 🚀 Features
 
-## Installation
-To install AI Video Clipper Pro, follow these steps:
-1. Download the installer from the official website.
-2. Run the installer and follow the on-screen instructions.
-3. Launch the application once the installation is complete.
+✅ **User Authentication** - Secure login and registration
+✅ **Video Upload** - Easy drag-and-drop video uploads
+✅ **Smart Clip Creation** - Create unlimited clips from videos
+✅ **Multiple Export Qualities** - 480p, 1080p, 4K
+✅ **Whop Integration** - Complete monetization with subscriptions
+✅ **Tiered Pricing** - Free, Starter, Pro plans
+✅ **Real Database** - PostgreSQL for persistent storage
+✅ **Responsive Design** - Works on desktop and mobile
 
-## Usage
-1. Open AI Video Clipper Pro.
-2. Import your video file.
-3. Select the clipping options you desire.
-4. Click on the 'Clip' button to create your video.
-5. Export your clip to your desired format.
+## 🛠️ Tech Stack
 
-## Support
-For support, please visit our [support page](https://support.aivideoclipperpro.com).
+- **Frontend:** React 18, TypeScript, CSS3
+- **Backend:** Node.js, Express, TypeScript
+- **Database:** PostgreSQL
+- **Monetization:** Whop
+- **Deployment:** Docker, Heroku
 
-## License
-This project is licensed under the MIT License.
+## 📦 Quick Start
 
-## Contributing
-We welcome contributions! Please refer to our [contributing guide](https://github.com/AsterKujtila/AsterInc/CONTRIBUTING.md) for more information.
+### Prerequisites
+- Node.js 16+
+- PostgreSQL 12+
+- npm or yarn
+
+### Backend Setup
+
+```bash
+cd backend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+cp .env.example .env
+npm start
+```
+
+## 🌐 API Endpoints
+
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `POST /api/videos/upload` - Upload video
+- `GET /api/videos/:userId` - Get user videos
+- `DELETE /api/videos/:videoId` - Delete video
+- `POST /api/clips/create` - Create clip
+- `GET /api/clips/:videoId` - Get clips for video
+- `DELETE /api/clips/:clipId` - Delete clip
+- `GET /api/whop/subscription/:userId` - Get subscription status
+- `POST /api/whop/webhook` - Whop webhook handler
+
+## 💳 Pricing Plans
+
+**Free** - $0/month
+- 5 video uploads
+- 10 clips per video
+- 480p exports
+
+**Starter** - $9.99/month
+- Unlimited video uploads
+- 50 clips per video
+- 1080p exports
+- Email support
+
+**Pro** - $29.99/month
+- Unlimited everything
+- AI-powered clipping
+- 4K exports
+- Priority support
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env` file in the backend directory:
+
+```env
+PORT=5000
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=ai_video_clipper
+WHOP_API_KEY=apik_Z4btjPimS550T_A2028413_C_fe062ca0d91c1122aeaf3798c97985c57cec60f3cde1c57aea329eb9da760d
+NEXT_PUBLIC_WHOP_APP_ID=app_AuH878MzcUkyUQ
+WHOP_WEBHOOK_SECRET=your_secret
+NODE_ENV=development
+```
+
+## 🐳 Docker Deployment
+
+```bash
+docker-compose up --build
+```
+
+Access the app at http://localhost:3000
+
+## 📊 Database Schema
+
+- **users** - User accounts and authentication
+- **videos** - Uploaded videos
+- **clips** - Video clips created by users
+- **subscriptions** - User subscription information
+- **payments** - Payment records from Whop
+
+## 🔐 Security
+
+- Password hashing with SHA256
+- CORS protection enabled
+- File type validation for uploads
+- Whop webhook signature verification
+- PostgreSQL parameterized queries for SQL injection prevention
+
+## 📈 Whop Integration
+
+The app is fully integrated with Whop for monetization:
+
+- Subscription webhooks handled
+- Payment tracking
+- Plan limit enforcement
+- Automatic user creation from Whop subscriptions
+
+## 🚀 Deployment
+
+### Deploy to Heroku
+
+```bash
+heroku create your-app-name
+git push heroku ai-video-clipper:main
+heroku config:set WHOP_API_KEY=your_key
+```
+
+### Deploy Frontend to Vercel
+
+```bash
+cd frontend
+vercel
+```
+
+## 📝 License
+
+MIT License - feel free to use for personal or commercial projects
+
+## 👥 Support
+
+For issues or questions:
+- 📧 Email: support@aivideoclipperpro.com
+- 🐛 GitHub Issues: [Create an issue](https://github.com/AsterKujtila/AsterInc/issues)
+- 💬 Discussions: [Join our community](https://github.com/AsterKujtila/AsterInc/discussions)
+
+---
+
+**Made with ❤️ by AsterKujtila**
+**Powered by Whop - The Creator Commerce Platform**
